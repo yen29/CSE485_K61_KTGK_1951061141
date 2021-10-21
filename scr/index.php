@@ -31,7 +31,6 @@
                     <tr>
                       <th scope="col">STT</th>
                       <th scope="col">Họ và tên</th>
-                      <th scope="col">Chi tiết</th>
                       <th scope="col">Sửa</th>
                       <th scope="col">Xóa</th>
                     </tr>
@@ -45,7 +44,7 @@
                             die("Không thể kết nối, kiểm tra lại các tham số kết nối");
                         }
                         #Bước 2: Khai báo câu lệnh thực thi và thực hiện truy vấn
-                        $sql = "SELECT bd_name FROM BLOOD_DONOR;";
+                        $sql = "SELECT * FROM BLOOD_DONOR;";
                         $result = mysqli_query($conn,$sql);
                          #Bước 3: Xử lí kết quả trả về
                         if(mysqli_num_rows($result)>0){
@@ -54,9 +53,9 @@
                       ?>
                             <tr>
                               <th scope="row"><?php echo $i; ?></th>
-                              <td><?php echo $row['db_name']; ?></td>                   
-                              <td><a href="sua.php?bd_id=<?php echo $row['db_id']; ?>"><i class="fas fa-edit"></i> </a></td>
-                              <td><a href="xoa.php?bd_id=<?php echo $row['db_id']; ?>"><i class="fas fa-trash"></i> </a></td>
+                              <td><?php echo $row['bd_name']; ?></td>                 
+                              <td><a href="sua.php?bd_id=<?php echo $row['bd_id']; ?>"><i class="fas fa-edit"></i> </a></td>
+                              <td><a href="xoa.php?bd_id=<?php echo $row['bd_id']; ?>"><i class="fas fa-trash"></i> </a></td>
                             </tr>
                     <?php
                             
